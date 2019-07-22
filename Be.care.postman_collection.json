@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "e7c3439c-5f50-4cec-986f-b5e6cc07f2fc",
+		"name": "Be.care",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Receive",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"user\" : \"email@address.com\",\n\"begin\" : \"2019-07-09T09:47:46.000+0000\",\n\"end\" : \"2019-07-09T10:01:06.000+0000\",\n\"data\" : [{\"heartRate\": 70.1}, {\"someOtherMeasure\":20}, {\"anotherMesure\":30}]\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/api/receive?",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"receive"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "robin@gmail.com",
+							"disabled": true
+						},
+						{
+							"key": "begin",
+							"value": "2019-07-09T09:47:46.000+0000",
+							"disabled": true
+						},
+						{
+							"key": "end",
+							"value": "2019-07-09T10:01:06.000+0000",
+							"disabled": true
+						},
+						{
+							"key": "data",
+							"value": "{\"data\" :[{\"heartRate\":70},{\"someOtherMeasure\":20},{\"anotherMesure\":30}]}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "email2@address.com",
+							"type": "text"
+						},
+						{
+							"key": "firstName",
+							"value": "Robin",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Balbis",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/createUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"createUser"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
